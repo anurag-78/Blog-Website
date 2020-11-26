@@ -7,9 +7,6 @@ const _ = require("lodash");
 const mongoose=require("mongoose");
 
 
-const homeStartingContent = "Welcome!!! You can compose and post your blogs here...";
-const contactContent ="anuragdiwedi78@gmail.com";
-const aboutContent="Blog Website....";
 
 mongoose.connect("mongodb+srv://admin-anurag:20675256@cluster0.ndeft.mongodb.net/blogDB", {useNewUrlParser: true});
 const postSchema={
@@ -44,10 +41,10 @@ app.get("/",function(req,res){
 Post.find({},function(err,foundPosts){
   if(foundPosts.length!==0)
   {
-  res.render("home",{homeText:homeStartingContent,title:"Home",posts:foundPosts});
+  res.render("home",{homeText:"Welcome!!! You can compose and post your blogs here...",title:"Home",posts:foundPosts});
 }else
 {
-  res.render("home1",{homeText:homeStartingContent,title:"Home",postHead:"Home"});
+  res.render("home1",{homeText:"Welcome!!! You can compose and post your blogs here...",title:"Home",postHead:"Home"});
 }
 });
 
@@ -57,11 +54,11 @@ Post.find({},function(err,foundPosts){
 
 
 app.get("/about",function(req,res){
-  res.render("about",{aboutText:aboutContent,title:"About"});
+  res.render("about",{aboutText:"Blog Website....",title:"About"});
 })
 
 app.get("/contact",function(req,res){
-  res.render("contact",{contactText:contactContent,title:"Contact"});
+  res.render("contact",{contactText:"anuragdiwedi78@gmail.com",title:"Contact"});
 })
 
 
