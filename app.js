@@ -8,7 +8,7 @@ const mongoose=require("mongoose");
 
 
 
-mongoose.connect("mongodb+srv://admin-anurag:20675256@cluster0.ndeft.mongodb.net/blogDB", {useNewUrlParser: true});
+mongoose.connect("mongodb+srv://****************@cluster0.ndeft.mongodb.net/blogDB", {useNewUrlParser: true});
 const postSchema={
   title:String,
   content:String
